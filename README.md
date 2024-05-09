@@ -66,5 +66,11 @@ This is a React Native application designed for task management. The tasks begin
 - AsyncStorage is an API for storing key-value pairs asynchronously in React Native apps.
 - It's commonly used for persisting small amounts of data locally on the device, such as user preferences and settings.
 - AsyncStorage operates asynchronously, ensuring smooth app performance, but it's best suited for storing small data sets.
+# Formik:
+- Formik is a popular form library for React that helps in managing forms with ease. It simplifies form validation, handling form submission, and managing form state. Formik integrates seamlessly with React and supports Yup for form validation.
+# Yup:
+- Yup is a JavaScript schema builder for value parsing and validation. It's commonly used with Formik to define validation rules for form fields. Yup allows you to define schemas to validate the shape and content of your data.
+# React Native UI Kitten:
+- React Native UI Kitten is a mobile framework for building stunning cross-platform applications. It provides a set of customizable UI components for React Native applications, which follow the Material Design guidelines. UI Kitten components are highly customizable and offer a consistent look and feel across different platforms.
 
 ```
