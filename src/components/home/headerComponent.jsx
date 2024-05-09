@@ -60,16 +60,13 @@ const HeaderComponent = ({ongoing, pending, completed, cancel}) => {
 
   return (
     <View style={styles.container}>
-      <View>
-        <Text style={styles.allTasks}>My Weekly Tasks</Text>
-      </View>
       <FlatList
         numColumns={2}
         data={tasks}
         renderItem={({item}) => <Task item={item} />}
       />
       <View>
-        <Text style={styles.allTasks}>All Meetings </Text>
+        <Text style={styles.allTasks}>All Tasks </Text>
       </View>
     </View>
   );

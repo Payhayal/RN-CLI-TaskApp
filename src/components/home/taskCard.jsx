@@ -29,8 +29,8 @@ const TaskCard = ({item}) => {
 
         <View>
           <Text style={styles.moment}>
-            {moment(item.startDate).format('DD/MM/YYYY')}-
-            {moment(item.endDate).format('DD/MM/YYYY')}
+            {moment(item.startDate).format('MM/DD/YYYY')}-
+            {moment(item.endDate).format('MM/DD/YYYY')}
           </Text>
         </View>
       </View>

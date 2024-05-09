@@ -14,10 +14,11 @@ const Home = ({navigation}) => {
   const [cancel, setCancel] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
   const getTask = async () => {
+    console.log(tasks);
     try {
       const savedTask = await AsyncStorage.getItem('tasks');
       setTasks(JSON.parse(savedTask));
-      console.log(tasks);
+
       let CompletedCount = 0;
       let PendingCount = 0;
       let OnGoingCount = 0;
@@ -51,8 +52,12 @@ const Home = ({navigation}) => {
   };
 
   useEffect(() => {
-    getTask();
-  }, []);
+    const unsubscribe = navigation.addListener('focus', () => {
+      getTask();
+    });
+
+    return unsubscribe;
+  }, [navigation]);
 
   return (
     <View style={styles.container}>

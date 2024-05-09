@@ -10,16 +10,19 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {status} from '../../utils/constants';
 
 const AddTask = ({navigation}) => {
-  const saveTask = async values => {
-    // await AsyncStorage.removeItem('tasks');
-    try {
-      const savedTasks = await AsyncStorage.getItem('tasks');
-      let myTask = savedTasks ? JSON.parse(savedTasks) : [];
-      myTask.push(values);
-      await AsyncStorage.setItem('tasks', JSON.stringify(myTask));
-    } catch (error) {
-      Alert.alert('An error has occurred!Please try again..');
-    }
+  const saveTask = values => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const savedTasks = await AsyncStorage.getItem('tasks');
+        let myTask = savedTasks ? JSON.parse(savedTasks) : [];
+        myTask.push(values);
+        await AsyncStorage.setItem('tasks', JSON.stringify(myTask));
+        resolve(true);
+      } catch (error) {
+        Alert.alert('An error has occurred! Please try again..');
+        reject(false);
+      }
+    });
   };
   return (
     <View style={styles.container}>
@@ -34,10 +37,14 @@ const AddTask = ({navigation}) => {
           status: status.ONGOING,
         }}
         validationSchema={taskSchema}
-        onSubmit={values => {
-          saveTask(values);
-          navigation.navigate(TASKS);
-          Alert.alert('You have successfully created an account!');
+        onSubmit={async values => {
+          try {
+            await saveTask(values); // saveTask işleminin tamamlanmasını bekleyin
+            navigation.navigate(TASKS);
+            Alert.alert('You have successfully created a task!');
+          } catch (error) {
+            console.error('An error occurred while saving the task:', error);
+          }
         }}>
         {({
           handleChange,

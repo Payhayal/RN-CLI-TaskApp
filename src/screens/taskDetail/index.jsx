@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Divider} from '@ui-kitten/components';
 import {View, Text, StyleSheet, ScrollView, Alert} from 'react-native';
 import {AppColors} from '../../theme/colors';
@@ -50,6 +50,11 @@ const TaskDetail = ({route}) => {
       console.error('An error has occurred', error);
     }
   };
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', async () => {});
+
+    return unsubscribe;
+  }, [navigation]);
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -65,12 +70,12 @@ const TaskDetail = ({route}) => {
         <Divider />
         <View style={styles.viewItem}>
           <Text style={styles.text}>Start Date :</Text>
-          <Text>{moment(item.startDate).format('DD/MM/YYYY')}</Text>
+          <Text>{moment(item.startDate).format('MM/DD/YYYY')}</Text>
         </View>
         <Divider />
         <View style={styles.viewItem}>
           <Text style={styles.text}>End Date :</Text>
-          <Text>{moment(item.endDate).format('DD/MM/YYYY')}</Text>
+          <Text>{moment(item.endDate).format('MM/DD/YYYY')}</Text>
         </View>
         <Divider />
         <View style={styles.viewItem}>
@@ -88,28 +93,28 @@ const TaskDetail = ({route}) => {
       </ScrollView>
       <View style={styles.viewBtn}>
         <Button
-          onPress={() => {
-            updateTask(status.PENDING);
+          onPress={async () => {
+            await updateTask(status.PENDING);
             navigation.navigate(TASKS);
-            Alert.alert('The task was marked as successfully pending!');
+            Alert.alert('The task was marked as pending!');
           }}
           style={styles.buttons}
           status="primary">
           START
         </Button>
         <Button
-          onPress={() => {
-            updateTask(status.COMPLETED);
+          onPress={async () => {
+            await updateTask(status.COMPLETED);
             navigation.navigate(TASKS);
-            Alert.alert('The task was marked as successfully completed !');
+            Alert.alert('The task was marked as completed!');
           }}
           style={styles.buttons}
           status="success">
           COMPLETED
         </Button>
         <Button
-          onPress={() => {
-            updateTask(status.CANCEL);
+          onPress={async () => {
+            await updateTask(status.CANCEL);
             navigation.navigate(TASKS);
             Alert.alert('The task was successfully cancelled!');
           }}
@@ -118,8 +123,8 @@ const TaskDetail = ({route}) => {
           CANCEL
         </Button>
         <Button
-          onPress={() => {
-            deleteTask();
+          onPress={async () => {
+            await deleteTask();
             navigation.navigate(TASKS);
             Alert.alert('The task was successfully deleted!');
           }}
