@@ -42,35 +42,43 @@ This is a React Native application designed for task management. The tasks begin
 
 # Libraries Used
 
-```
-# Moment
+### Moment
+
 -Moment is a JavaScript library for parsing, validating, manipulating, and formatting dates.
 -It provides an easy-to-use API for working with dates and times in various formats.Moment is widely used in web development, especially when dealing with date and time-related operations.
 
-# UUID
+### UUID
+
 -UUID (Universally Unique Identifier) is a standardized format for generating unique identifiers.
 -UUIDs are used to uniquely identify entities in distributed systems where a centralized authority may not be available to assign unique identifiers.
 -They are commonly used in various scenarios such as database records, session IDs, messaging, and more.
 
-# React Navigation:
+### React Navigation:
+
 - React Navigation is a widely-used library for managing navigation and routing in React Native apps.
 - It offers various navigation components like Stack, Tab, and Drawer Navigator for building navigation flows.
 - React Navigation is highly customizable and supports both iOS and Android platforms.
 
-# Iconsax-react-native:
+### Iconsax-react-native:
+
 - Iconsax-react-native is a library providing a collection of high-quality icons for React Native apps.
 - It simplifies the integration of icons into apps by offering a convenient way to use Iconsax icons as React Native components.
 - Iconsax offers a diverse range of icons covering different categories.
 
-# React Native AsyncStorage:
+### React Native AsyncStorage:
+
 - AsyncStorage is an API for storing key-value pairs asynchronously in React Native apps.
 - It's commonly used for persisting small amounts of data locally on the device, such as user preferences and settings.
 - AsyncStorage operates asynchronously, ensuring smooth app performance, but it's best suited for storing small data sets.
-# Formik:
-- Formik is a popular form library for React that helps in managing forms with ease. It simplifies form validation, handling form submission, and managing form state. Formik integrates seamlessly with React and supports Yup for form validation.
-# Yup:
-- Yup is a JavaScript schema builder for value parsing and validation. It's commonly used with Formik to define validation rules for form fields. Yup allows you to define schemas to validate the shape and content of your data.
-# React Native UI Kitten:
-- React Native UI Kitten is a mobile framework for building stunning cross-platform applications. It provides a set of customizable UI components for React Native applications, which follow the Material Design guidelines. UI Kitten components are highly customizable and offer a consistent look and feel across different platforms.
 
-```
+### Formik:
+
+- Formik is a popular form library for React that helps in managing forms with ease. It simplifies form validation, handling form submission, and managing form state. Formik integrates seamlessly with React and supports Yup for form validation.
+
+### Yup:
+
+- Yup is a JavaScript schema builder for value parsing and validation. It's commonly used with Formik to define validation rules for form fields. Yup allows you to define schemas to validate the shape and content of your data.
+
+### React Native UI Kitten:
+
+- React Native UI Kitten is a mobile framework for building stunning cross-platform applications. It provides a set of customizable UI components for React Native applications, which follow the Material Design guidelines. UI Kitten components are highly customizable and offer a consistent look and feel across different platforms.
