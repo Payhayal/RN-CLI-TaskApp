@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Add} from 'iconsax-react-native';
 

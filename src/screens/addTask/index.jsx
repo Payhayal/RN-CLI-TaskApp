@@ -39,7 +39,7 @@ const AddTask = ({navigation}) => {
         validationSchema={taskSchema}
         onSubmit={async values => {
           try {
-            await saveTask(values); // saveTask işleminin tamamlanmasını bekleyin
+            await saveTask(values);
             navigation.navigate(TASKS);
             Alert.alert('You have successfully created a task!');
           } catch (error) {

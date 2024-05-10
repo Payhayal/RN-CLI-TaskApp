@@ -1,6 +1,5 @@
-import {TaskSquare} from 'iconsax-react-native';
-import moment from 'moment';
 import React from 'react';
+import moment from 'moment';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import {setCategory} from '../../utils/functions';
 import {useNavigation} from '@react-navigation/native';

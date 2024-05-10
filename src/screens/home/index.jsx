@@ -1,5 +1,5 @@
-import {View, StyleSheet, FlatList, RefreshControl, Alert} from 'react-native';
 import React, {useEffect, useState} from 'react';
+import {View, StyleSheet, FlatList, RefreshControl} from 'react-native';
 import FloatActionBtn from '../../components/ui/floatActionBtn';
 import {ADDTASKS} from '../../utils/routes';
 import AsyncStorage from '@react-native-async-storage/async-storage';

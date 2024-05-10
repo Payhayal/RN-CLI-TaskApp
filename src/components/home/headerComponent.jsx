@@ -9,6 +9,23 @@ import {
   TickCircle,
 } from 'iconsax-react-native';
 
+const Task = ({item}) => {
+  return (
+    <Pressable style={[styles.TaskView, {backgroundColor: item.color}]}>
+      {item.icon}
+      <View style={styles.TaskIcon}>
+        <View>
+          <Text>{item.title}</Text>
+          <Text style={styles.TaskColor}>{item.count} Task</Text>
+        </View>
+        <View>
+          <ArrowCircleRight2 size="25" color={AppColors.WHITE} />
+        </View>
+      </View>
+    </Pressable>
+  );
+};
+
 const HeaderComponent = ({ongoing, pending, completed, cancel}) => {
   const tasks = [
     {
@@ -40,23 +57,6 @@ const HeaderComponent = ({ongoing, pending, completed, cancel}) => {
       count: cancel,
     },
   ];
-
-  const Task = ({item}) => {
-    return (
-      <Pressable style={[styles.TaskView, {backgroundColor: item.color}]}>
-        {item.icon}
-        <View style={styles.TaskIcon}>
-          <View>
-            <Text>{item.title}</Text>
-            <Text style={styles.TaskColor}>{item.count} Task</Text>
-          </View>
-          <View>
-            <ArrowCircleRight2 size="25" color={AppColors.WHITE} />
-          </View>
-        </View>
-      </Pressable>
-    );
-  };
 
   return (
     <View style={styles.container}>
